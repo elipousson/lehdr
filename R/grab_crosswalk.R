@@ -60,7 +60,7 @@ download_xwalk <- function(url, download_dir) {
   lodes_req <- request(url)
 
   # Perform request and handle connection errors, writing response to disk
-  rlang::inform(glue::glue("Downloading crosswalk {url} to {fil}"))
+  rlang::inform(glue::glue("Downloading crosswalk {url} to {basename(fil)}"))
   withCallingHandlers(
     lodes_resp <- lodes_req |>
       req_error(is_error = \(lodes_resp) FALSE) |>

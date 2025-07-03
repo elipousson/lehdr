@@ -200,7 +200,9 @@ grab_lodes <- function(
     # User set use_cache to TRUE
     if (file.exists(fil)) {
       # If there is a cached file, use it
-      rlang::inform(glue::glue("Using cached version of file found in: {fil}"))
+      rlang::inform(glue::glue(
+        "Using cached version of file found in: {basename(fil)}"
+      ))
     } else {
       # No cached file
       # Perform request and handle connection errors, writing response to disk
@@ -230,7 +232,7 @@ grab_lodes <- function(
           "i" = "Empty response."
         ))
       } else {
-        rlang::inform(glue::glue("Download complete for {fil}"))
+        rlang::inform(glue::glue("Download complete for {basename(fil)}"))
       }
     }
   } else {
@@ -238,9 +240,11 @@ grab_lodes <- function(
     if (file.exists(fil)) {
       # But there is a cached file
       # Existing file found, inform user of use_cache
-      rlang::inform(glue::glue("Cached version of file found in: {fil}"))
       rlang::inform(glue::glue(
-        "Consider setting use_cache=TRUE to use previously downloaded files."
+        "Cached version of file found in: {basename(fil)}"
+      ))
+      rlang::inform(glue::glue(
+        "Consider setting `use_cache = TRUE` to use previously downloaded files."
       ))
     }
     # Download (and overwite if necessary) data from server
@@ -273,7 +277,7 @@ grab_lodes <- function(
         "i" = "Empty response."
       ))
     } else {
-      rlang::inform(glue::glue("Download complete for {fil}"))
+      rlang::inform(glue::glue("Download complete for {basename(fil)}"))
     }
   }
 
@@ -284,9 +288,9 @@ grab_lodes <- function(
   if (!use_cache) {
     if (unlink(fil)) {
       # 0 for success, 1 for failure, invisibly.
-      rlang::inform(glue::glue("Could not clear {fil} from cache."))
+      rlang::inform(glue::glue("Could not clear {basename(fil)} from cache."))
     } else {
-      rlang::inform(glue::glue("{fil} cleared from cache."))
+      rlang::inform(glue::glue("{basename(fil)} cleared from cache."))
       # Now check to see if the cache directory is empty, remove it if it is
       if (length(list.files(download_dir)) == 0) {
         unlink(download_dir, recursive = TRUE)
