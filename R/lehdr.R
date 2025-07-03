@@ -129,6 +129,11 @@ grab_lodes <- function(
   state <- tolower(state)
   version <- toupper(version)
 
+  # Allow block group as substitute for bg
+  if (identical(agg_geo, "block group")) {
+    agg_geo <- "bg"
+  }
+
   # Handle errors and set default arguments
   version <- rlang::arg_match(version)
   lodes_type <- rlang::arg_match(lodes_type)
