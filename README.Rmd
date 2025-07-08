@@ -22,7 +22,9 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/jamgreen/lehdr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jamgreen/lehdr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-**lehdr** (pronounced: _lee dur_ like a metric _litre_) is an R package that allows users to interface with the [Longitudinal and Employer-Household Dynamics (LEHD)](https://lehd.ces.census.gov/) Origin-Destination Employment Statistics (LODES) dataset returned as dataframes. The package is continually in development and can be installed via CRAN.
+**lehdr** (pronounced: _lee dur_ like a metric _litre_) is an R package that allows users to interface with the [Longitudinal and Employer-Household Dynamics (LEHD)](https://lehd.ces.census.gov/) Origin-Destination Employment Statistics (LODES) dataset returned as dataframes.
+
+The **lehdr** package is designed to grab the LODES flat files (origin-destination, workplace, and residential association files) and includes an option to aggregate results to the Census tract level for analysts who find the fuzzing at the block level too great.
 
 ## Installation
 
@@ -153,10 +155,6 @@ Such data is integral for regional travel demand models that help to dictate tra
 Finally, as a Census product, the LODES data can be joined to Census Decennial or American Community Survey data to help visualize the interactions between different population groups and work.
 
 In short, the LODES dataset is the only source of detailed geographic information on employment for the country and should be more widely available for researchers and analysts who work on regional development issues.
-
-## Future development
-
-Currently, **lehdr** is designed to grab the LODES flat files (origin-destination, workplace, and residential association files) and includes an option to aggregate results to the Census tract level for analysts who find the fuzzing at the block level too great.
 
 ## Acknowledgements
 

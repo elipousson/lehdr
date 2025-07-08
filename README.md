@@ -15,8 +15,12 @@ downloads](https://cranlogs.r-pkg.org/badges/lehdr)](https://cran.r-project.org/
 that allows users to interface with the [Longitudinal and
 Employer-Household Dynamics (LEHD)](https://lehd.ces.census.gov/)
 Origin-Destination Employment Statistics (LODES) dataset returned as
-dataframes. The package is continually in development and can be
-installed via CRAN.
+dataframes.
+
+The **lehdr** package is designed to grab the LODES flat files
+(origin-destination, workplace, and residential association files) and
+includes an option to aggregate results to the Census tract level for
+analysts who find the fuzzing at the block level too great.
 
 ## Installation
 
@@ -189,13 +193,6 @@ In short, the LODES dataset is the only source of detailed geographic
 information on employment for the country and should be more widely
 available for researchers and analysts who work on regional development
 issues.
-
-## Future development
-
-Currently, **lehdr** is designed to grab the LODES flat files
-(origin-destination, workplace, and residential association files) and
-includes an option to aggregate results to the Census tract level for
-analysts who find the fuzzing at the block level too great.
 
 ## Acknowledgements
 
